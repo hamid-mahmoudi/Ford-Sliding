@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "lemon";
+  src: url(../fonts/Southwood-1GpDv.ttf);
+}
+@font-face {
+  font-family: "ford";
+  src: url(../fonts/Fordscript.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body{
+  overflow: hidden;
+}
+.movingSlide {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.model {
+  width: 100%;
+  height: 60%;
+  z-index: 100;
+}
+.model img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: fixed;
+}
+.fullScreen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: -100vw;
+  background: #ffa17f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #00223e,
+    #ffa17f
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #00223e,
+    #ffa17f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.whiteScreen{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: whitesmoke;
+  z-index: 1000000;
+}
+.reload{
+  width: auto;
+  padding: 1rem;
+  height: 50px;
+  z-index: 10000;
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  border-radius: 10px 0 0 10px;
+  color: white;
+  background: #787878;
+  box-shadow:  25px 25px 51px #3c3c3c;
+}
+.logo{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 1000;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.paraf {
+  z-index: 1000;
+  font-size: 80px;
+  position: absolute;
+  top: 180px;
+  left: 380px;
+  font-family: "lemon";
+  opacity: 0;
+  transform: rotate(-15deg);
+}
+
+
+.heightUp {
+  animation-name: heightUp;
+  animation-duration: 2s;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
+}
+.widthDown {
+  animation-name: widthDown;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.moveFullScreen {
+  animation-name: moveFullScreen;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.l2rFont {
+  animation-name: l2rFont;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+
+.logoDrop{
+  animation-name: logoDrop;
+  animation-duration: 3s;
+  animation-delay: 3.6s;
+  animation-fill-mode: forwards;
+}
+/* animations */
+@keyframes heightUp {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 60%;
+  }
+}
+@keyframes widthDown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 65%;
+  }
+}
+@keyframes moveFullScreen {
+  from {
+    width: 0;
+    left: -100vw;
+  }
+  to {
+    width: 100vw;
+    left: 0;
+  }
+}
+@keyframes l2rFont {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes l2rFont2 {
+  from {
+    top: 110%;
+    opacity: 0;
+  }
+  to {
+    top: 88%;
+    opacity: 1;
+  }
+}
+@keyframes logoDrop {
+  from{
+    visibility: hidden;
+    transform: scale(10000);
+  }
+  to{
+    visibility: visible;
+    transform: scale(1);
+  transform: translate(-50%, -50%);
+
+  }
+  
+}
